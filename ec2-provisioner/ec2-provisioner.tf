@@ -37,8 +37,9 @@ resource "aws_instance" "bpk-tf-example" {
   tags {
     Owner = "BPK"
   }
-}
 
-resource "aws_eip" "ip" {
-  instance = "${aws_instance.bpk-tf-example.id}"
+  provisioner "local-exec" {
+    command = "echo 'public_ip : ${aws_instance.bpk-tf-example.public_ip}'"
+  }
+
 }
