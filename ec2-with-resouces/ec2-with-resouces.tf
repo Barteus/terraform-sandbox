@@ -1,7 +1,6 @@
 provider "aws" {
   //london
-  region = "eu-west-2"
-  profile = "prv"
+  region = "eu-west-1"
 }
 
 data "aws_ami" "amazon-ami" {
